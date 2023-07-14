@@ -1,0 +1,33 @@
+.product-detail-page {
+  margin-top: 50px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+.address {
+  margin-bottom: 10px;
+}
+
+.price {
+  margin-bottom: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.add-to-cart-btn {
+  margin-right: 10px;
+}
+
+.buy-now-btn {
+  margin-right: 10px;
+}
