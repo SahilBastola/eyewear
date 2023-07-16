@@ -30,12 +30,13 @@ const AdminContactPage = () => {
     <section id="contact-form">
       <div className="container shadow-lg p-3 mt-5 py-5 rounded text-center">
         <div className="container">
-          <h1 className="text-center my-5">Order Details</h1>
+          <h1 className="text-center my-5">Contact Details</h1>
           <table className="table">
             <thead>
               <tr>
                 <th>Username</th>
                 <th>Email</th>
+                <th>Address</th>
                 <th>Description</th>
                 <th>Action</th>
               </tr>
@@ -45,6 +46,7 @@ const AdminContactPage = () => {
                 <tr key={contact._id}>
                   <td>{contact.Fullname}</td>
                   <td>{contact.Email}</td>
+                  <td>{contact.Address}</td>
                   <td>{contact.Description}</td>
                   <td>
                     <button className="btn btn-success mx-2">Verify</button>

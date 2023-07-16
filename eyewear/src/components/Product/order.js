@@ -86,11 +86,11 @@ const OrderPage = () => {
                   <td>
                     {order.verified ? (
                       <button className="btn btn-success mx-2" disabled>
-                        Verified
+                        verified
                       </button>
                     ) : (
-                      <button className="btn btn-success mx-2" >
-                        Verify
+                      <button className="btn btn-danger mx-2" >
+                        unverified
                       </button>
                     )}
                     <button className="btn btn-danger mx-2" onClick={() => handleDeleteOrder(order._id)}>

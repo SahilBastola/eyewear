@@ -74,8 +74,8 @@ const Cart = () => {
           Authorization: `Bearer ${token}`,
         },
       };
-  
-      await axios.delete(`http://localhost:4000/cart/${cartId}`, config);
+
+      await axios.delete(`http://localhost:4000/cart/`, config);
       setCarts(carts.filter((cart) => cart._id !== cartId));
       alert("cart Product removed.");
     } catch (error) {
@@ -121,7 +121,7 @@ const Cart = () => {
     carts.forEach((cart) => {
       total += cart.productid.price * cart.quantity;
     });
-    return total * 10;
+    return total;
   };
 
   const openModal = () => {

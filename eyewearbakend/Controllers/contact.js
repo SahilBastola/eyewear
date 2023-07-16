@@ -11,7 +11,7 @@ const createContact = async (req, res, next) => {
         Fullname: req.body.Fullname,
         Email: req.body.Email,
         Address: req.body.Address,
-        Description: req.body.Address,
+        Description: req.body.Description,
       });
       try {
         const savedProduct = await newContact.save();

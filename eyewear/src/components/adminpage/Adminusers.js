@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react'
 import axios from "axios";
 
 const AdminUserPage = () => {
-
     const [users, setUsers] = useState("");
     useEffect(() => {
       axios.get(`http://localhost:4000/users/`)
@@ -11,10 +10,23 @@ const AdminUserPage = () => {
       })
       .catch((err) => console.log(err));
     }, []);
-    
-      const handleDeleteOrder = (orderId) => {
-        setUsers(users.filter((user) => user._id !== orderId));
-      };
+
+    const handleDeleteOrder = async (userid) => {
+      try {
+        const token = window.localStorage.getItem('token');
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        await axios.delete(`http://localhost:4000/users/${userid}`, config);
+        setUsers(users.filter((user) => user._id !== userid));
+        alert("user has been removed")
+      } catch (error) {
+        console.log(error);
+      }
+    };
+     
   return (
     <section id="contact-form">
         
@@ -36,7 +48,7 @@ const AdminUserPage = () => {
               <td>{user.username}</td>
               <td>{user.email}</td>
               <td>
-                <button className="btn btn-danger mx-2" onClick={() => handleDeleteOrder(user._id)}>Delete</button>
+                <button className="btn btn-danger mx-2" onClick={() =>  handleDeleteOrder(user._id)}>Delete</button>
               </td>
             </tr>
               );

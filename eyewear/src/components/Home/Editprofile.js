@@ -37,9 +37,7 @@ const EditProfilePage = () => {
         passsword: password,
       })
       .then(() => {
-       
-          setUsername(window.localStorage.setItem(`username`, username));
-      
+        window.localStorage.setItem(`username`, username)
        
         navigate("/ProfilePage");
       })
